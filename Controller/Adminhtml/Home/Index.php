@@ -20,6 +20,11 @@ namespace Cleverpush\WebPush\Controller\Adminhtml\Home;
 class Index extends \Magento\Backend\App\Action
 {
     /**
+     * @var \Magento\Framework\View\Result\PageFactory
+     */
+    private $resultPageFactory;
+
+    /**
      * Constructor
      *
      * @param \Magento\Backend\App\Action\Context        $context           context
@@ -29,8 +34,8 @@ class Index extends \Magento\Backend\App\Action
         \Magento\Backend\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory
     ) {
-         parent::__construct($context);
-         $this->resultPageFactory = $resultPageFactory;
+        parent::__construct($context);
+        $this->resultPageFactory = $resultPageFactory;
     }
 
     /**
@@ -40,6 +45,6 @@ class Index extends \Magento\Backend\App\Action
      */
     public function execute()
     {
-         return  $resultPage = $this->resultPageFactory->create();
+        return  $resultPage = $this->resultPageFactory->create();
     }
 }
